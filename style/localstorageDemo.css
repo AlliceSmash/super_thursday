@@ -1,0 +1,52 @@
+﻿
+body {
+    margin: 2em ;
+    padding: 0em;
+    background-color:  #5CCCCC;
+}
+
+body section {
+    width: 80%;
+    margin: auto;
+    /*background-color: #5CCCCC;*/
+}
+
+article {
+    border: solid 0.8em #A967D5;
+    padding: 0.5em 0;
+}
+article header {
+        color: #000000;
+        font: normal 2.5em 'Sunshiney';
+        padding: 0.2em;
+}
+
+article .hiddenText {
+    display: none;
+    padding: 0.5em;
+}
+
+.normalText {
+    color: black;
+    font: normal 2em 'Flamenco';
+    text-align: center;
+    padding: 0.5em;
+}
+
+.btnsubmit{
+    font: normal 1.5em 'Flamenco';
+    text-align: center;
+    box-shadow: inset 0px 0px 1em rgb(181,181,174);
+    border-radius: 0.75em;
+    margin-left: 0.5em;
+}
+
+.figureSet{
+    text-align: center;
+    padding: 2em;
+    margin: auto;  
+}
+
+.imgDisplay{
+    box-shadow: 0 0 1em 0.5em #ccc;
+}

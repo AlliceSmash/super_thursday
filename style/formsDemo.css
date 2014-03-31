@@ -1,0 +1,73 @@
+﻿body {
+    margin: 0px auto;
+    padding: 0px;
+    background-color: #DDF1F1;
+}
+
+header div:first-child {
+    text-align: center;
+     background-color: #009999;
+     border-bottom: 8px solid #FFDD73;
+}
+
+    header span {
+        color: #DDF1F1;
+        font: normal 60px 'Sunshiney',cursive;
+    }
+
+header .imgcentered {
+    vertical-align: middle;
+}
+
+#mymainForm {
+  width: 550px;
+  margin: 10px auto;
+}
+
+.normalText {
+    color: black;
+    font: normal 25px 'Flamenco';
+    text-align: center;
+    padding: 10px;
+}
+
+label {
+    display: block;
+    font: normal 20px 'Flamenco';
+    padding:3px 0;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 15em;
+}
+
+input[type=date]{
+    line-height: 20px;
+}
+
+.forms {
+    float: left;
+    clear: none;
+    padding: 15px;
+    border: 5px solid  #F16C97;
+    border-radius: 5px;
+}
+
+.sidebar {
+    float:right;
+    clear: none;
+}
+
+.btnsubmit{
+    font: normal 20px 'Flamenco';
+    text-align: center;
+    box-shadow: inset 0px 0px 10px rgb(181,181,174);
+    border-radius: 10px;
+}
+
+.modal-lg {
+    width: 50%;
+}

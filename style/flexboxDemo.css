@@ -1,0 +1,134 @@
+body {
+    /*why is there a problem if I use margin :0px ???*/
+    margin: 0px 50px;
+    padding: 0px;
+}
+
+header {
+    text-align: center;
+}
+
+    header .small {
+        color: #C3F500;
+        font: normal 40px 'Sunshiney',cursive;
+    }
+
+    header .large {
+        color: #4800ff;
+        font: normal 50px 'Sunshiney',cursive;
+    }
+
+.normalText {
+    color: black;
+    font: normal 25px 'Flamenco';
+    text-align: left;
+}
+
+.flexbox {
+}
+
+    .flexbox #ex1 {
+        margin: 10px 0;
+        display: flex;
+        width: 100%;
+        /*-ms-flex-pack: distribute;*/
+        justify-content: space-around;
+    }
+
+        .flexbox #ex1 > div {
+            min-width: 150px;
+            min-height: 40px;
+            border: 1px solid black;
+            margin: 5px;
+            box-shadow: 0px 0px 3px 3px rgb(181, 181, 174);
+            border-radius: 5px;
+        }
+
+            .flexbox #ex1 > div:nth-child(1) {
+                background-color: #ff6a00;
+            }
+
+        .flexbox #ex1 :first-child:hover {
+            background-color: #35aa3b;
+            transition: all 1s;
+            transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+        }
+
+        .flexbox #ex1 > div:nth-child(2) {
+            background-color: #bd3131;
+        }
+
+        .flexbox #ex1 > div:nth-child(3) {
+            background-color: #2aa1b6;
+        }
+
+        .flexbox #ex1 > div:last-child {
+            background-color: #9131bd;
+        }
+
+    .flexbox #ex2 {
+        margin: 10px 0;
+        display: flex;
+        width: 100%;
+    }
+
+        .flexbox #ex2 > div {
+            min-width: 80px;
+            min-height: 40px;
+            margin: 5px;
+            box-shadow: 0px 0px 3px 3px rgb(181, 181, 174);
+            border-radius: 5px;
+        }
+
+            .flexbox #ex2 > div:first-child {
+                background-color: #ff6a00;
+                -ms-flex: 1 0 auto;
+                flex: 1;
+            }
+
+            .flexbox #ex2 > div:nth-child(2) {
+                background-color: #bd3131;
+                -ms-flex: 2 0 auto;
+                flex: 2;
+            }
+
+        .flexbox #ex2 :last-child {
+            background-color: #2aa1b6;
+        }
+
+            .flexbox #ex2 :last-child:hover {
+                flex: 3;
+            }
+
+    .flexbox #ex3 {
+        margin: 10px 0;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -moz-box-flex:1; width:100%;
+        border: 5px solid gray;
+    }
+
+        .flexbox #ex3 > div {
+            min-width: 200px;
+            min-height: 50px;
+            border: solid 1px black;
+            margin: 5px;
+            box-shadow: 0px 0px 3px 3px rgb(181, 181, 174);
+            border-radius: 5px;
+        }
+
+        .flexbox #ex3 :nth-child(3) {
+            background-color: #446811;
+            box-shadow: 0px 0px 3px 3px #49db0f;
+        }
+
+            .flexbox #ex3 :nth-child(3):hover {
+                transform: rotate(180deg);
+                -ms-transform: rotate(180deg); /* IE 9 */
+                -webkit-transform: rotate(180deg); /* Safari and Chrome */
+                -o-transform: rotate(180deg); /* Opera */
+                -moz-transform: rotate(180deg); /* Firefox */
+                transition: all 3s;
+            }

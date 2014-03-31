@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>FormsDemo</title>
+    <link href='http://fonts.googleapis.com/css?family=Flamenco|Sunshiney' rel='stylesheet' />
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style/formsDemo.css" rel="stylesheet" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="script/modernizr.custom.67508.js"></script>
+    <script src="script/forms.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="img/FarnsworthSmall.png" class="imgcentered" />
+            <span>The Fabulous Forms</span>
+        </div>
+    </header>
+    <div class="normalText">
+        <strong>Good news, everyone!</strong> We are going to learn <em>Forms</em>!
+        <br />
+        You need to fill out the following forms to enroll this program:
+    </div>
+
+    <div id="mymainForm">
+        <article class="forms">
+            <form id="questions">
+                <div>
+                    <label>User Name:</label>
+                    <input type="text" required id="username" pattern="^[a-zA-Z]+[0-9]*" autofocus />
+                </div>
+                <div>
+                    <label>Email address:</label>
+                    <input type="email" required id="email_addr" placeholder="name@company.com" />
+                </div>
+                <div>
+                    <label>Re-enter your email address:</label>
+                    <input type="email" required id="email_addr_confirm" autocomplete="off" placeholder="Confirm email address" />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" required id="pwd" pattern="[^\s]{6,}" />
+                </div>
+                <div>
+                    <label>Date to enroll:</label>
+                    <input type="date" required id="enrollDate" />
+                </div>
+                <div>
+                    <label>Your favorite breakfast:</label>
+                    <input type="text" id="favbk" list="breakfast" />
+                    <datalist id="breakfast">
+                        <option>Apple puff cake</option>
+                        <option>Banana nut bread</option>
+                        <option>Bread pudding</option>
+                        <option>Cherry almond scone</option>
+                        <option>Dutch baby</option>
+                        <option>French toast</option>
+                        <option>Milk and cereal</option>
+                        <option>Spinach quiche</option>
+                        <option>Sourdough pancakes</option>
+                        <option>Toast and cheese</option>
+                        <option>Oatmeal the old fashion way</option>
+                    </datalist>
+                </div>
+                <div>
+                    <button type="submit" class="btnsubmit">submit the form!</button>
+                </div>
+            </form>
+        </article>
+        <aside class="sidebar">
+            <img src="img/futurama-fry-small2.png" />
+        </aside>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Last chance...</h4>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to enroll this program?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=" #confirmModal" data-dismiss="modal">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="confirmModalLabel">Congratulations!</h4>
+                </div>
+                <div class="modal-body">
+                    You are enrolled in our Fabulous Forms program!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
