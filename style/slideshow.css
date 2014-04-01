@@ -1,63 +1,123 @@
-﻿
-@-webkit-keyframes slide1 {
+﻿@-webkit-keyframes slide1 {
     0% {
-        top: 0px;
+        left: 0px;
     }
-/*display*/
+    /*display*/
     10%,40% {
-        top: 0px;
+        left: 0px;
         opacity: 1;
         z-index: 0;
     }
     /*exiting*/
     50%{
-        top: 485px;
+        left: 645px;
         opacity: 0;
         z-index: 0;
     }
 
     60% {
-        top: -485px;
+        left: -645px;
         opacity: 0;
         z-index: -1;
     }
     /*entering*/
     90%{
-        top: -485px;
+        left: -645px;
         opacity: 0;
     }
 
     100% {
-        top: 0px;
+        left: 0px;
         opacity: 1;
     }
 }
 
+@-moz-keyframes slide1 {
+        0% {
+        left: 0px;
+    }
+    /*display*/
+    10%,40% {
+        left: 0px;
+        opacity: 1;
+        z-index: 0;
+    }
+    /*exiting*/
+    50%{
+        left: 645px;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    60% {
+        left: -645px;
+        opacity: 0;
+        z-index: -1;
+    }
+    /*entering*/
+    90%{
+        left: -645px;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0px;
+        opacity: 1;
+    }
+}
 
 @-webkit-keyframes slide2 {
     0%{
-        top: -485px;
+        left: -645px;
         opacity: 0;
     }
 
     40% {
-        top:-485px;
+        left:-645px;
         opacity: 0;
     }
     
     50%,80% {
-        top: 0px;
+        left: 0px;
         opacity: 1;
         z-index: 0;
     }
 
     90% {
-        top: 485px;
+        left: 645px;
         opacity: 0;
     }
 
     100% {
-        top: -485px;
+        left: -645px;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes slide2 {
+    0%{
+        left: -645px;
+        opacity: 0;
+    }
+
+    40% {
+        left:-645px;
+        opacity: 0;
+    }
+    
+    50%,80% {
+        left: 0px;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    90% {
+        left: 645px;
+        opacity: 0;
+    }
+
+    100% {
+        left: -645px;
         opacity: 0;
     }
 }
@@ -78,24 +138,17 @@ article header {
     width: 960px;
 }
 
-#content-slider {
-	width:100%;
-	height:480px;
-	margin:10px auto 0;
-}
-
 #slides{
     border: 2px solid #808080;
     box-shadow: 0 0 1em #c2bcbc;
     width: 640px;
     height: 480px;
     margin: 20px auto;
-    overflow: visible;
-    position: relative;
 }
 
-#slides:hover {
-    animation-play-state: paused;
+#slides:hover li{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state: paused;
 }
 
 #slides ul {
@@ -108,7 +161,7 @@ article header {
     width: 640px;
     height: 480px;
     position: absolute;
-    top: -485px;
+    left: -645px;
     list-style: none;
 }
 
@@ -119,9 +172,15 @@ article header {
 
 /*only use 10s/2 time*/
 #container li.animation1{
-    -webkit-animation: slide1 10s linear infinite;
+    -webkit-animation: slide1 10s linear 10;
+    -moz-animation: slide1 10s linear 10;
+    -webkit-animation-play-state:running;
+    -moz-animation-play-state:running;
 }
 
 #container li.animation2{
-    -webkit-animation: slide2 10s linear infinite;
+    -webkit-animation: slide2 10s linear 10;
+    -moz-animation: slide2 10s linear 10;
+    -webkit-animation-play-state:running;
+    -moz-animation-play-state:running;
 }
