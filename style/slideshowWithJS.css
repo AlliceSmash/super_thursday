@@ -1,0 +1,45 @@
+﻿body
+{
+    margin: 50px auto;
+}
+
+article header {
+    font: normal 3em 'Flamenco';
+    text-align: center;
+}
+
+.main{
+    margin: 0 auto;
+    overflow: hidden;
+    width: 960px;
+}
+
+#slides{
+    border: 2px solid #808080;
+    box-shadow: 0 0 1em #c2bcbc;
+    width: 640px;
+    height: 480px;
+    margin: 20px auto;
+}
+
+#slides ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#slides li {
+    width: 640px;
+    height: 480px;
+    position: absolute;
+    left: 0px;
+    list-style: none;
+}
+
+/*#slides li.active{
+}*/
+
+#container{
+    overflow: hidden;
+    height: 480px;
+}
