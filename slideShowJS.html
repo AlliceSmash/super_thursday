@@ -3,24 +3,32 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <title>Slide Show Using Javascript</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <link href='http://fonts.googleapis.com/css?family=Flamenco|Sunshiney' rel='stylesheet' type='text/css'>
     <link href="style/slideshowWithJS.css" rel="stylesheet"/>
-    <title>Slide Show Using Javascript</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
 </head>
 <body>
     <article class="main">
         <header>Is it spring time?</header>
         <section id="slides">
             <div id="container">
-                <ul>
-                    <li class="active"><img src="img/owlSpring.png"/></li>
-                    <li class=""><img src="img/owlNope.png"/></li>
-                </ul>
+               <img class="active" src="img/owlSpring.png"/>
+               <img class="" src="img/owlNope.png"/>
+            </div>
+            <div id="controls">
+                <button id="left" ><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <button id="right"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <div style="clear: both;"></div>
+
             </div>
         </section>
+        <!--<section id="snapshots">
+
+        </section>-->
     </article>
     <script src="script/slideshow.js"></script>
 </body>

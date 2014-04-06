@@ -18,11 +18,11 @@ article header {
     border: 2px solid #808080;
     box-shadow: 0 0 1em #c2bcbc;
     width: 640px;
-    height: 480px;
+    height: 484px;
     margin: 20px auto;
 }
 
-#slides ul {
+/*#slides ul {
     margin: 0;
     padding: 0;
     position: relative;
@@ -36,10 +36,39 @@ article header {
     list-style: none;
 }
 
-/*#slides li.active{
+#slides li.active{
+
 }*/
 
-#container{
+#slides #container {
+    margin: 0px;
+    padding: 0;
+    position: relative;
     overflow: hidden;
     height: 480px;
+}
+
+#slides img {
+    width: 640px;
+    height: 480px;
+    position: absolute;
+    left: 0px;
+}
+
+#controls{
+    width: 636px;
+    position: absolute;
+    top: 350px;
+}
+
+#controls #left{
+    width: auto;
+    height: 2em;
+    float: left;
+}
+
+#controls #right{
+    width: auto;
+    height: 2em;
+    float: right;
 }

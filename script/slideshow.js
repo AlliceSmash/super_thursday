@@ -2,25 +2,36 @@
 $(window).load(function () {
     var timer;
     function showNextSlide() {
-        var $active = $("#slides li.active");
-        var $temp = $active.next('li');
-        var $next = $temp.length ? $temp : $('#slides li:first-child');
+        var $active = $("#slides img.active");
+        var $temp = $active.next('img');
+        var $next = $temp.length ? $temp : $('#slides img:first-child');
 
         $active.fadeOut({ duration: 1000 }).removeClass("active");
         $next.fadeIn({ duration: 1000 }).addClass("active");
     };
 
-    $("#container").hover(
-        function () {
-            clearInterval(timer);
-        },
-        function () {
-            timer = setInterval(showNextSlide, 3000);
-        }
-    );
+    function showPrevSlide() {
+        var $active = $("#slides img.active");
+        var $temp = $active.prev('img');
+        var $next = $temp.length ? $temp : $('#slides img:last-child');
+        $active.fadeOut({ duration: 1000 }).removeClass("active");
+        $next.fadeIn({ duration: 1000 }).addClass("active");
+    };
+
+    $("#controls #right").click(function () {
+        clearInterval(timer);
+        showNextSlide();
+        timer = setInterval(showNextSlide, 5000);
+    });
+
+    $("#controls #left").click(function () {
+        clearInterval(timer);
+        showPrevSlide();
+        timer = setInterval(showNextSlide, 5000);
+    });
 
     (function () {
-        $("#slides li:not(.active)").hide();
-        timer = setInterval( showNextSlide, 3000 );
+        $("#slides img:not(.active)").hide();
+        timer = setInterval( showNextSlide, 5000 );
     })();
 });
