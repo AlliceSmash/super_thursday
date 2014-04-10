@@ -1,5 +1,4 @@
-﻿body
-{
+﻿body {
     margin: 50px auto;
 }
 
@@ -8,37 +7,19 @@ article header {
     text-align: center;
 }
 
-.main{
+.main {
     margin: 0 auto;
     overflow: hidden;
     width: 960px;
 }
 
-#slides{
+#slides {
     border: 2px solid #808080;
     box-shadow: 0 0 1em #c2bcbc;
     width: 640px;
     height: 484px;
     margin: 20px auto;
 }
-
-/*#slides ul {
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-#slides li {
-    width: 640px;
-    height: 480px;
-    position: absolute;
-    left: 0px;
-    list-style: none;
-}
-
-#slides li.active{
-
-}*/
 
 #slides #container {
     margin: 0px;
@@ -55,20 +36,45 @@ article header {
     left: 0px;
 }
 
-#controls{
+#slides #controls {
     width: 636px;
     position: absolute;
     top: 350px;
 }
 
-#controls #left{
+#slides #controls #left {
     width: auto;
     height: 2em;
     float: left;
 }
 
-#controls #right{
+#slides #controls #right {
     width: auto;
     height: 2em;
     float: right;
+}
+
+#slides-nav {
+    width: 200px;
+    height: auto;
+    margin: 10px auto;
+}
+
+#tncontainer {
+    width: 220px;
+    height: 50px;
+    padding: 0;
+    vertical-align: middle;
+    display: inline-block; 
+}
+
+.verticalspacer {
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block; 
+}
+
+#tncontainer .inner {
+    vertical-align: middle;
+    display: inline-block; 
 }

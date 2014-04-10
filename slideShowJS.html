@@ -16,19 +16,24 @@
         <header>Is it spring time?</header>
         <section id="slides">
             <div id="container">
-               <img class="active" src="img/owlSpring.png"/>
-               <img class="" src="img/owlNope.png"/>
+               <img id ="img1" class="active" src="img/owlSpring.png"/>
+               <img id="img2" class="" src="img/owlNope.png"/>
             </div>
             <div id="controls">
                 <button id="left" ><span class="glyphicon glyphicon-chevron-left"></span></button>
                 <button id="right"><span class="glyphicon glyphicon-chevron-right"></span></button>
                 <div style="clear: both;"></div>
-
             </div>
         </section>
-        <!--<section id="snapshots">
-
-        </section>-->
+        <section id="slides-nav">
+             <div id="tncontainer">
+                 <span class=".verticalspacer"></span>
+                 <div class="inner"><button id="left" class="btn btn-sm"><span class="glyphicon glyphicon-chevron-left"></span></button></div>
+                 <div class="inner"><a href="#img1"><img src="img/thumbnails/owlSpring-tn.png" /></a></div>
+                 <div class="inner"><a href="#img2"><img src="img/thumbnails/owlNope-tn.png" /></a></div>
+                 <div class="inner"><button id="right" class="btn btn-sm"><span class="glyphicon glyphicon-chevron-right"></span></button></div>
+            </div>
+        </section>
     </article>
     <script src="script/slideshow.js"></script>
 </body>
