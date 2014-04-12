@@ -16,22 +16,27 @@
         <header>Is it spring time?</header>
         <section id="slides">
             <div id="container">
-               <img id ="img1" class="active" src="img/owlSpring.png"/>
-               <img id="img2" class="" src="img/owlNope.png"/>
+                <img id="img1" class="active" src="img/owlSpring.png" />
+                <img id="img2" class="" src="img/owlNope.png" />
+                <img id="img3" class="" src="img/img3.JPg" />
             </div>
             <div id="controls">
-                <button id="left" ><span class="glyphicon glyphicon-chevron-left"></span></button>
-                <button id="right"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <div id="left"><span class="glyphicon glyphicon-chevron-left"></span></div>
+                <div id="right"><span class="glyphicon glyphicon-chevron-right"></span></div>
                 <div style="clear: both;"></div>
             </div>
         </section>
         <section id="slides-nav">
-             <div id="tncontainer">
-                 <span class=".verticalspacer"></span>
-                 <div class="inner"><button id="left" class="btn btn-sm"><span class="glyphicon glyphicon-chevron-left"></span></button></div>
-                 <div class="inner"><a href="#img1"><img src="img/thumbnails/owlSpring-tn.png" /></a></div>
-                 <div class="inner"><a href="#img2"><img src="img/thumbnails/owlNope-tn.png" /></a></div>
-                 <div class="inner"><button id="right" class="btn btn-sm"><span class="glyphicon glyphicon-chevron-right"></span></button></div>
+            <div id="scrollleft">
+                <div><span class="glyphicon glyphicon-chevron-left"></span></div>
+            </div>
+            <div id="tbncontainer">
+                <img class="activeNav" src="img/thumbnails/owlSpring-tn.png" />
+                <img src="img/thumbnails/owlNope-tn.png" />
+                <img  src="img/thumbnails/tbn1.png" />
+            </div>
+            <div id="scrollright">
+                <div><span class="glyphicon glyphicon-chevron-right"></span></div>
             </div>
         </section>
     </article>

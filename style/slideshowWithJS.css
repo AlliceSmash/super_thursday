@@ -21,8 +21,8 @@ article header {
     margin: 20px auto;
 }
 
-#slides #container {
-    margin: 0px;
+#container {
+    margin: 0;
     padding: 0;
     position: relative;
     overflow: hidden;
@@ -33,48 +33,55 @@ article header {
     width: 640px;
     height: 480px;
     position: absolute;
-    left: 0px;
+    left: 0;
 }
 
-#slides #controls {
-    width: 636px;
+#controls {
+    width: 675px;
     position: absolute;
     top: 350px;
+    left: 250px;
 }
 
-#slides #controls #left {
+#left {
     width: auto;
     height: 2em;
     float: left;
 }
 
-#slides #controls #right {
+ #right {
     width: auto;
     height: 2em;
     float: right;
 }
 
 #slides-nav {
-    width: 200px;
-    height: auto;
+    width: 230px;
     margin: 10px auto;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+}
+ 
+
+#slides-nav > div {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    min-width:14px;
 }
 
-#tncontainer {
-    width: 220px;
-    height: 50px;
-    padding: 0;
-    vertical-align: middle;
-    display: inline-block; 
+#tbncontainer {
+    flex: 3 1 auto;
+    -webkit-box-flex:  3 1 ;
+    overflow:hidden;
+}
+#tbncontainer img {   
+   min-width: 66px;
+   margin: 0 auto;
 }
 
-.verticalspacer {
-    height: 100%;
-    vertical-align: middle;
-    display: inline-block; 
-}
 
-#tncontainer .inner {
-    vertical-align: middle;
-    display: inline-block; 
+.activeNav {
+    border: 1px solid red;
 }
