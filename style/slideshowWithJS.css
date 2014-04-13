@@ -40,7 +40,7 @@ article header {
     width: 675px;
     position: absolute;
     top: 350px;
-    left: 250px;
+    left: 255px;
 }
 
 #left {
@@ -62,7 +62,6 @@ article header {
     display: -ms-flexbox;
     justify-content: center;
 }
- 
 
 #slides-nav > div {
     display: flex;
@@ -76,11 +75,11 @@ article header {
     -webkit-box-flex:  3 1 ;
     overflow:hidden;
 }
-#tbncontainer img {   
+
+#tbncontainer img {
    min-width: 66px;
    margin: 0 auto;
 }
-
 
 .activeNav {
     border: 1px solid red;

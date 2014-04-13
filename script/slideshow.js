@@ -1,17 +1,16 @@
 $(window).load(function () {
     var timer;
+    $("#slides img:not(.active)").hide();
+
     function showSlide(direction, fadeSpeed) {
         var $active = $("#slides img.active");
         var $activeNav = $("#tbncontainer .activeNav");
         var temp, $next, $nextNav;
-        if( typeof(speed) === "undefined" ) { speed =1000;};
+        if( typeof(fadespeed) === "undefined" ) { fadespeed = 1000;};
 
         $next = getNextElement($active, direction);
         $nextNav = getNextElement($activeNav, direction);
-        $active.fadeOut({ duration: fadeSpeed }).removeClass("active");
-        $activeNav.removeClass("activeNav");
-        $nextNav.addClass("activeNav");
-        $next.fadeIn({ duration: fadeSpeed }).addClass("active");
+        doTransition($active, $next, $activeNav, $nextNav, fadespeed);
     }
 
     function getNextElement(currElement, direction) {
@@ -25,41 +24,53 @@ $(window).load(function () {
         return nextElement;
     }
 
+    function doTransition(currElement, nextElement, currNav, nextNav, fadespeed) {
+        currElement.fadeOut({ duration: fadespeed }).removeClass("active");
+        currNav.removeClass("activeNav");
+        nextNav.addClass("activeNav");
+        nextElement.fadeIn({ duration: fadespeed }).addClass("active");
+    }
+
     function showNextSlide() {
-        showSlide("next", 1000);
+        showSlide("next");
     };
 
     function showPrevSlide() {
-        showSlide("prev", 1000);
+        showSlide("prev");
     };
 
     $("#right").click(function () {
-        clearInterval(timer);
+//        clearInterval(timer);
         showNextSlide();
-        timer = setInterval(showNextSlide, 5000);
+//        timer = setInterval(showNextSlide, 5000);
     });
 
     $("#left").click(function () {
-        clearInterval(timer);
+ //       clearInterval(timer);
         showPrevSlide();
-        timer = setInterval(showNextSlide, 5000);
+//        timer = setInterval(showNextSlide, 5000);
     });
 
     $("#scrollleft").click(function () {
-        showSlide("prev", 1000);
+        showSlide("prev");
     });
 
     $("#scrollright").click(function () {
-        showSlide("next", 1000);
+        showSlide("next");
     });
 
-    $("#tbncontainer img").hover(function () {
-        //var index = $(this).index();
-        //var $active = $("#container img:eq(index)");
+    $("#tbncontainer img").click(function () {
+        //find current slide to fade
+        var $currElem = $("#container img.active");
+        var $currNav = $("#tbncontainer img.activeNav");
+        //find which one to show
+        var index = $(this).index();
+        var $toShow = $("#container img").eq(index);
+        doTransition($currElem, $toShow, $currNav, $(this), 600);
     });
 
     (function () {
-        $("#slides img:not(.active)").hide();
-        //timer = setInterval( showNextSlide, 5000 );
+        
+       // timer = setInterval( showNextSlide, 5000 );
     })();
 });
