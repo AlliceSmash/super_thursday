@@ -2,12 +2,12 @@
     margin: 50px auto;
 }
 
-article header {
+header {
     font: normal 3em 'Flamenco';
     text-align: center;
 }
 
-.main {
+#main {
     margin: 0 auto;
     overflow: hidden;
     width: 960px;
@@ -15,17 +15,14 @@ article header {
 
 #slides {
     border: 2px solid #808080;
-    box-shadow: 0 0 1em #c2bcbc;
-    width: 640px;
+    box-shadow: 0 0 6px 3px #c2bcbc;
+    width: 644px;
     height: 484px;
     margin: 20px auto;
 }
 
 #container {
-    margin: 0;
-    padding: 0;
     position: relative;
-    overflow: hidden;
     height: 480px;
 }
 
@@ -33,34 +30,31 @@ article header {
     width: 640px;
     height: 480px;
     position: absolute;
-    left: 0;
 }
 
 #controls {
-    width: 675px;
-    position: absolute;
-    top: 350px;
-    left: 255px;
+    width: 685px;
+    position: relative;
+    top: -275px;
+    left: -25px;
 }
 
 #left {
-    width: auto;
-    height: 2em;
     float: left;
+    cursor:pointer;
 }
 
  #right {
-    width: auto;
-    height: 2em;
     float: right;
+    cursor:pointer;
 }
 
 #slides-nav {
-    width: 230px;
+    width: 412px;
     margin: 10px auto;
     display: flex;
-    display: -ms-flexbox;
     justify-content: center;
+    align-items: center;
 }
 
 #slides-nav > div {
@@ -71,14 +65,16 @@ article header {
 }
 
 #tbncontainer {
-    flex: 3 1 auto;
-    -webkit-box-flex:  3 1 ;
     overflow:hidden;
 }
 
-#tbncontainer img {
-   min-width: 66px;
+#tbncontainer >img {
+   min-width: 64px;
    margin: 0 auto;
+}
+
+#scrollleft, #scrollright {
+    cursor: pointer;
 }
 
 .activeNav {
