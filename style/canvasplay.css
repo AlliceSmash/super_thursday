@@ -1,0 +1,16 @@
+﻿body {
+    height: 100%;
+    margin: 10px;
+}
+
+section > div {
+    width: 300px;
+    height: auto;
+    margin: 10px auto;
+    text-align: center;
+    border: solid medium #808080;
+}
+
+.canvassmall {
+    overflow: hidden;
+}
