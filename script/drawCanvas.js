@@ -61,31 +61,6 @@ $(document).ready(function () {
         ctx.fill();
     })();
 
-    (function drawArc1() {
-        var canvas1 = document.getElementById("arc");
-        var ctx = canvas1.getContext('2d');
-        ctx.beginPath();
-        ctx.arc(50, 50, 20, Math.PI, 1.5 * Math.PI, false);
-        ctx.lineTo(150, 30);
-        ctx.arc(150, 50, 20, 1.5 * Math.PI, 0, false);
-        ctx.lineTo(170, 80);
-        ctx.arc(150, 80, 20, 0, 0.5 * Math.PI, false);
-        ctx.lineTo(75, 100);
-        ctx.quadraticCurveTo(65, 120, 50, 120);
-        ctx.quadraticCurveTo(65, 115, 62.5, 100);
-        ctx.lineTo(50, 100);
-        ctx.arc(50, 80, 20, Math.PI * 0.5, Math.PI, false);
-        ctx.lineTo(30, 50);
-        ctx.stroke();
-        ctx.shadowOffsetX = 2;
-        ctx.shadowOffsetY = 2;
-        ctx.shadowBlur = 2;
-        ctx.font = "2em Arial";
-        ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
-        ctx.fillStyle = "#a10909";
-        ctx.fillText("Hello!", 50, 75);
-    });
-    
     function drawArc(startX, startY, radius1, straightlength, straightheight) {
         var canvas1 = document.getElementById("arc");
         var ctx = canvas1.getContext('2d');
@@ -108,7 +83,7 @@ $(document).ready(function () {
         ctx.font = "2em Arial";
         ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
         ctx.fillStyle = "#a10909";
-        ctx.fillText("Hello!", 50, 75);
+        ctx.fillText("Hello!", startX, startY+radius1);
     };
 
     (function drawImg() {
