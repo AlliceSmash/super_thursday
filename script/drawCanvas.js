@@ -36,6 +36,9 @@ $(document).ready(function () {
 
     (function drawRect() {
         var canvas1 = document.getElementById("rectangle");
+        //set up the coordinate to avoid the stretching problem, also see Image section
+        canvas1.setAttribute('width', $("#rectangle").css('width'));
+        canvas1.setAttribute('height', $("#rectangle").css('height'));
         var ctx = canvas1.getContext('2d');
         ctx.fillStyle = 'rgb(169, 169, 169)';
         ctx.fillRect(15, 15, 100, 100);
@@ -95,8 +98,7 @@ $(document).ready(function () {
                     ctx.drawImage(img, 75*i , j*85 );
         }
         img.src = "img/futurama-fry-tiny.png";
-
     })();
 
-    drawArc(50, 50,20, 100, 30);
+    drawArc(50, 50, 20, 100, 30);
 });

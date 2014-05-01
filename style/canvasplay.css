@@ -21,6 +21,11 @@ section > div {
     overflow: hidden;
 }
 
+#rectangle {
+    width: 250px;
+    height: 250px;
+}
+
 aside {
     width: 300px;
     margin: 10px auto;
