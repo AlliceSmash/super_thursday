@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Web Communication</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src ="script/CSCommunication.js"></script>
+    <link href ="style/webcommunication.css" rel="stylesheet" />
+</head>
+<body>
+    <section>
+        <h2>WebSocket Test</h2>
+        <button id="wsButton">Click me to test websocket!</button>
+        <div id="socketOutput"></div>
+    </section>
+    <section>
+        <h2>Ajax call</h2>
+        <button id="ajaxButton">Click me to fetch css file</button>
+        <div id="ajaxResult"></div>
+    </section>
+    <section>
+        <h2>Drag and Drop Files</h2>
+        <div id="dropbox"></div>
+    </section>
+    <section>
+        <h2>Drag an image to any where</h2>
+        <div id="dragdropimg"></div>
+    </section>
+    <section>
+        <h2>Web worker</h2>        
+        <div>
+            <p>My buddy says: <span id="workerResponse">Nothing yet!</span> </p>
+            <button id="startWorker">Start One Webworker</button>
+            <button id="endWorker">Close This Webworker</button>
+        </div>
+    </section>
+</body>
+</html>
