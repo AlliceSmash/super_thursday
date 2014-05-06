@@ -1,103 +1,89 @@
 // JavaScript source code
 $(document).ready(function () {
-    var wsUri = "ws://echo.websocket.org/";
-    $("#wsButton").click(function () {
-        testWebSocket();
-    });
-
-    function testWebSocket() {
-        websocket = new WebSocket(wsUri);
-        websocket.onopen = function (evt) { onOpen(evt) };
-        websocket.onclose = function (evt) { onClose(evt) };
-        websocket.onmessage = function (evt) { onMessage(evt) };
-        websocket.onerror = function (evt) { onError(evt) };
-    }
-
-    function onOpen(evt) {
-        writeToScreen("CONNECTED");
-        doSend("Hello Websocket!");
-    }
-
-    function onClose(evt) {
-        writeToScreen("DISCONNECTED");
-    }
-
-    function onMessage(evt) {
-        writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
-        websocket.close();
-    }
-
-    function onError(evt) {
-        writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
-    }
-
-    function doSend(message) {
-        writeToScreen("SENT: " + message);
-        websocket.send(message);
-    }
-
-    function writeToScreen(message) {
-        var pre = document.createElement("p");
-        $(pre).html(message);
-        $("#socketOutput").append(pre);
-    }
-
-    //AJAX part
-    $.ajaxSetup({ cache: false });
-    $("#ajaxButton").click(function () {
-
-    });
-
-    //drag and drop a file
+    //drag and drop a file to dropbox
     var dropbox = document.getElementById("dropbox");
     dropbox.addEventListener("dragenter", dragenter, false);
     dropbox.addEventListener("dragover", dragover, false);
     dropbox.addEventListener("drop", dropfiles, false);
 
+    document.getElementById("img1").addEventListener("dragstart", handledragstart,false);
+    document.getElementById("img2").addEventListener("dragstart", handledragstart,false);
+
+    function handledragstart(e){  
+        e.dataTransfer.setData("text", this.id);
+    }
+
     function dragenter(e) {
-        e.stopPropagation();
-        e.preventDefault();
+       preventBubble(e);
     }
 
     function dragover(e) {
-        e.stopPropagation();
-        e.preventDefault();
+        preventBubble(e);
     }
 
     function dropfiles(e) {
-        e.stopPropagation();
-        e.preventDefault();
+       preventBubble(e);
 
         var dt = e.dataTransfer;//get clipboard
-        var filelist = dt.files;//get files
-        handleFiles(filelist);
+        if(e.dataTransfer.getData("text"))
+        {
+            var id = e.dataTransfer.getData("text");
+            var elm=document.createElement("div");
+            elm.appendChild(document.getElementById(id));
+            dropbox.appendChild(elm);
+        }else{
+            var filelist = dt.files;//get files
+            handleFiles(filelist);
+        }        
 
         function handleFiles(filelist) {
+            var imageType=/image.*/;
+
             for(var i=0; i<filelist.length; i++){
+                var file = filelist[i];
                 var elm=document.createElement("div");
-                $("#dropbox").append(elm);
-                $(elm).html(filelist[i].name);
+                if(!file.type.match(imageType)){
+                    var aSpan= document.createElement("span");
+                    aSpan.innerHTML = file.name;
+                    $(elm).append(aSpan);
+                }else{
+                    var img = document.createElement("img");
+                    img.src = window.URL.createObjectURL(file);
+                    img.height = 50;
+                    img.onload = function(e){
+                        window.URL.revokeObjectURL(this.src);
+                    }
+                    elm.appendChild(img);
+                }   
+                $("#dropbox").append(elm);          
             }
         }
     }
-    //draggable element
 
-
+    function preventBubble(e){
+        e.stopPropagation();
+        e.preventDefault();
+    }
+       
     //webworker
     var worker = new Worker("script/workerTest.js");
-    var counter = 0;
-    worker.onmessage = function (e) {
+    // add eventlistener on client side
+    worker.addEventListener('message', function (e) {
         $("#workerResponse").html(e.data);
-    }
+    });
 
-    $("#startWorker").on('click', function () {
-         counter++;
-        worker.postMessage({val: counter});
+    $("#sayHi").on('click', function () {
+        worker.postMessage({ 'cmd': 'start', 'msg': 'Hi' });
     });
 
     $("#endWorker").on('click', function () {
-        counter = 0;
-        worker.terminate();
+        worker.postMessage({ 'cmd': 'stop', 'msg': 'Bye' });
         $("#workerResponse").html("Worker is Dead!");
     });
+
+    $('#foolyou').on('click', function () {
+        worker.postMessage({ 'cmd': 'ifoolu', 'msg': '???' });
+    });
 });
+
+

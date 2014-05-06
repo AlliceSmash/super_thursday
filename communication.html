@@ -9,30 +9,25 @@
 </head>
 <body>
     <section>
-        <h2>WebSocket Test</h2>
-        <button id="wsButton">Click me to test websocket!</button>
-        <div id="socketOutput"></div>
-    </section>
-    <section>
-        <h2>Ajax call</h2>
-        <button id="ajaxButton">Click me to fetch css file</button>
-        <div id="ajaxResult"></div>
-    </section>
-    <section>
         <h2>Drag and Drop Files</h2>
         <div id="dropbox"></div>
     </section>
     <section>
-        <h2>Drag an image to any where</h2>
-        <div id="dragdropimg"></div>
+        <h2>Drag an image to above box</h2>
+        <div id="dragdropimg">
+            <img src="img/thumbnails/IMG_02_tbn.png" id="img1" draggable = "true" />
+            <img src="img/thumbnails/IMG_09_tbn.png" id="img2" draggable = "true"/>
+        </div>
     </section>
     <section>
-        <h2>Web worker</h2>
+        <h2>Remote Web worker</h2>
         <div>
-            <p>My buddy says: <span id="workerResponse">Nothing yet!</span> </p>
-            <button id="startWorker">Start One Webworker</button>
-            <button id="endWorker">Close This Webworker</button>
+            <p>Master is listening: <span id="workerResponse">Nothing yet!</span> </p>
+            <button id="sayHi">Say Hi</button>
+            <button id="foolyou">UnknownCommand</button>
+            <button id="endWorker">Close</button>
         </div>
+        <h2>Inline Worker</h2>
     </section>
 </body>
 </html>

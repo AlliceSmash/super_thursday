@@ -1,5 +1,8 @@
-﻿body
-{
+﻿body{
+	width: 800px;
+	margin: 100px auto;
+	padding: 10px;
+	border: 25px ridge #E45C20 ;
 }
 
 #dropbox {
@@ -8,4 +11,8 @@
     border: 2px solid #1d7d16;
     box-shadow: 5px 5px 2px 3px #808080;
     border-radius: 1em 3em;
+}
+
+#dropbox > div {
+	margin: 10px;
 }
