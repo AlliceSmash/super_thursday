@@ -25,10 +25,10 @@ $(document).ready(function () {
        preventBubble(e);
 
         var dt = e.dataTransfer;//get clipboard
-        if(e.dataTransfer.getData("text"))
+        if(dt.getData("text"))
         {
             //if the file is dragged from this page (assume it is an image)
-            var id = e.dataTransfer.getData("text");
+            var id = dt.getData("text");
             var elm=document.createElement("div");
             elm.appendChild(document.getElementById(id));
             dropbox.appendChild(elm);
