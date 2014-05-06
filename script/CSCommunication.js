@@ -6,8 +6,8 @@ $(document).ready(function () {
     dropbox.addEventListener("dragover", dragover, false);
     dropbox.addEventListener("drop", dropfiles, false);
 
-    document.getElementById("img1").addEventListener("dragstart", handledragstart,false);
-    document.getElementById("img2").addEventListener("dragstart", handledragstart,false);
+    document.getElementById("img1").addEventListener("dragstart", handledragstart, false);
+    document.getElementById("img2").addEventListener("dragstart", handledragstart, false);
 
     function handledragstart(e){  
         e.dataTransfer.setData("text", this.id);
@@ -27,11 +27,13 @@ $(document).ready(function () {
         var dt = e.dataTransfer;//get clipboard
         if(e.dataTransfer.getData("text"))
         {
+            //if the file is dragged from this page (assume it is an image)
             var id = e.dataTransfer.getData("text");
             var elm=document.createElement("div");
             elm.appendChild(document.getElementById(id));
             dropbox.appendChild(elm);
         }else{
+            //file is dragged from somewhere else
             var filelist = dt.files;//get files
             handleFiles(filelist);
         }        
@@ -41,9 +43,9 @@ $(document).ready(function () {
 
             for(var i=0; i<filelist.length; i++){
                 var file = filelist[i];
-                var elm=document.createElement("div");
+                var elm = document.createElement("div");
                 if(!file.type.match(imageType)){
-                    var aSpan= document.createElement("span");
+                    var aSpan = document.createElement("span");
                     aSpan.innerHTML = file.name;
                     $(elm).append(aSpan);
                 }else{
