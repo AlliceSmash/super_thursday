@@ -1,0 +1,5 @@
+G:\Programming\FormFire\SuperThursday\Kata\FizzBuzz\FizzBuzz\bin\Debug\FizzBuzz.dll
+G:\Programming\FormFire\SuperThursday\Kata\FizzBuzz\FizzBuzz\bin\Debug\FizzBuzz.pdb
+G:\Programming\FormFire\SuperThursday\Kata\FizzBuzz\FizzBuzz\obj\Debug\FizzBuzz.dll
+G:\Programming\FormFire\SuperThursday\Kata\FizzBuzz\FizzBuzz\obj\Debug\FizzBuzz.pdb
+G:\Programming\FormFire\SuperThursday\Kata\FizzBuzz\FizzBuzz\obj\Debug\NumberGame.csprojResolveAssemblyReference.cache
